@@ -37,4 +37,5 @@ USER docker
 # keep backwards compatability with use cases that assume CMD is 'bash' since
 # specifying an ENTRYPOINT always clears the CMD that was inheritted by the FROM image
 # ref: https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact
+RUN echo it works!
 CMD ["bash"]
