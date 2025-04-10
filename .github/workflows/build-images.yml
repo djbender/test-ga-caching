@@ -51,10 +51,10 @@ jobs:
           files: core/noble/docker-bake.hcl
           source: .
           set: |
-            *.cache-from+=type=registry,ref=ghcr.io/djbender/test-ga-caching:cache-branch-${{ github.ref_name }}
-            *.cache-from+=type=registry,ref=ghcr.io/djbender/test-ga-caching:cache-shared
+            *.cache-from=type=registry,ref=ghcr.io/djbender/test-ga-caching:cache-branch-${{ github.ref_name }}
+            *.cache-from=type=registry,ref=ghcr.io/djbender/test-ga-caching:cache-shared
 
-            *.cache-to+=type=registry,ref=ghcr.io/djbender/test-ga-caching:cache-branch-${{ github.ref_name }},compression=zstd
-            *.cache-to+=type=registry,ref=ghcr.io/djbender/test-ga-caching:cache-shared,compression=zstd
+            *.cache-to=type=registry,ref=ghcr.io/djbender/test-ga-caching:cache-branch-${{ github.ref_name }},compression=zstd
+            *.cache-to=type=registry,ref=ghcr.io/djbender/test-ga-caching:cache-shared,compression=zstd
 
             *.platform=linux/arm64
