@@ -2,19 +2,19 @@
 
 In this repo I've created a demo where `docker/bake-action` uses `cache-from` and `cache-to` for three separate caching mechanisms, all at the registry level:
 
-    1. Branch caching which takes the following form:
+1. Branch caching which takes the following form:
 
     cache-branch-${{ steps.safe_ref_name.outputs.safe_ref_name }}
 
-    2. Shared cache as "most recent build" cache:
+2. Shared cache as "most recent build" cache:
 
     cache-shared
 
-    3. Default branch cache that only updates on merge. This conditional is triggered via:
+3. Default branch cache that only updates on merge. This conditional is triggered via:
 
     github.ref_name == github.event.repository.default_branch
 
-    and results in a tag that looks like:
+and results in a tag that looks like:
 
     ${{ github.event.repository.default_branch }} # i.e. "main"
 
