@@ -17,13 +17,13 @@ cache-shared
 3. Default branch cache that only updates on merge. This conditional is triggered via:
 
 ```yaml
-    github.ref_name == github.event.repository.default_branch
+github.ref_name == github.event.repository.default_branch
 ```
 
 and results in a tag that looks like:
 
 ```yaml
-    ${{ github.event.repository.default_branch }} # i.e. "main"
+${{ github.event.repository.default_branch }} # i.e. "main"
 ```
 
 The relevant code in the worflow is here:
